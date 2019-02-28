@@ -28,7 +28,7 @@ export class AddClientComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit({ value, valid }: { value: Client; valid: boolean }) {
-    console.log(value, valid);
+    // console.log(value, valid);
     if (this.disableBalanceOnAdd) {
       value.balance = 0;
     }
