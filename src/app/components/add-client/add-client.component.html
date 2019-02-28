@@ -63,13 +63,13 @@
       <div class="form-group">
         <label for="email">Email</label>
         <input
-          type="text"
+          type="email"
+          id="email"
           class="form-control"
           name="email"
           #clientEmail="ngModel"
           [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
           [(ngModel)]="client.email"
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
           required
         >
         <div
@@ -78,7 +78,7 @@
             Email required
         </div>
         <div
-          [hidden]="!clientEmail.errors?.pattern"
+          [hidden]="!clientEmail.errors?.email"
           class="invalid-feedback">
             Invalid email
         </div>
