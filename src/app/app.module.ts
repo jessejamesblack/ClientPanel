@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ClientService } from '../app/services/client.service';
+import { AuthService } from '../app/services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
@@ -49,7 +50,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ClientService, { provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [ClientService, AuthService, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
