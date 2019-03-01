@@ -18,7 +18,7 @@ export class AddClientComponent implements OnInit {
     balance: 0
   };
 
-  disableBalanceOnAdd: boolean = false;
+  disableBalanceOnAdd: boolean = true;
   @ViewChild('clientForm') form: any;
   constructor(
     private router: Router,
