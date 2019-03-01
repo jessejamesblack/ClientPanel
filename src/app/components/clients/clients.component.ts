@@ -24,7 +24,7 @@ export class ClientsComponent implements OnInit {
 
   getTotalOwed() {
     this.totalOwed = this.clients.reduce((total, client) => {
-      return Number(total + client.balance);
+      return total + parseFloat(client.balance.toString());
     }, 0);
   }
 }
