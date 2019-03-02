@@ -35,7 +35,11 @@ const routes: Routes = [
     component: ClientDetailsComponent,
     canActivate: [AuthGuard]
   },
-  { path: "settings", component: SettingsComponent, canActivate: [AuthGuard] },
+  {
+    path: "settings",
+    component: SettingsComponent,
+    canActivate: [AuthGuard, RegisterGuard]
+  },
   { path: "**", component: NotFoundComponent }
 ];
 
