@@ -37,7 +37,7 @@
           ><br />
           Due Date
           <span [class.text-danger]="pastDue" [class.text-success]="!pastDue">
-            {{ client.dueDate.seconds * 1000 | date }}
+            {{ client.dueDate | date }}
           </span>
         </h3>
         <div class="clearfix">

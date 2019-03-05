@@ -29,7 +29,7 @@ export class ClientDetailsComponent implements OnInit {
     // Get the client
     this.clientService.getClient(this.id).subscribe(client => {
       if (client != null) {
-        let dueDate = this.getDate(client.dueDate.seconds * 1000);
+        let dueDate = this.getDate(client.dueDate);
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
@@ -66,7 +66,7 @@ export class ClientDetailsComponent implements OnInit {
     }
   }
 
-  getDate(date) {
+  getDate(date: any) {
     return formatDate(date, "yyyy-MM-dd", "en-US");
   }
 }

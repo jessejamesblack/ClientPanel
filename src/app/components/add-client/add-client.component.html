@@ -4,9 +4,7 @@
       <i class="fa fa-arrow-circle-o-left"></i> Back to dashboard
     </a>
   </div>
-  <div class="col-md-6">
-
-  </div>
+  <div class="col-md-6"></div>
 </div>
 <div class="card">
   <div class="card-header">
@@ -21,20 +19,24 @@
           class="form-control"
           name="firstName"
           #clientFirstName="ngModel"
-          [ngClass]="{'is-invalid':clientFirstName.errors && clientFirstName.touched}"
+          [ngClass]="{
+            'is-invalid': clientFirstName.errors && clientFirstName.touched
+          }"
           [(ngModel)]="client.firstName"
           minlength="2"
           required
-        >
+        />
         <div
           [hidden]="!clientFirstName.errors?.required"
-          class="invalid-feedback">
-            First Name required
+          class="invalid-feedback"
+        >
+          First Name required
         </div>
         <div
           [hidden]="!clientFirstName.errors?.minlength"
-          class="invalid-feedback">
-            Must be at least two characters
+          class="invalid-feedback"
+        >
+          Must be at least two characters
         </div>
       </div>
       <div class="form-group">
@@ -44,20 +46,24 @@
           class="form-control"
           name="lastName"
           #clientLastName="ngModel"
-          [ngClass]="{'is-invalid':clientLastName.errors && clientLastName.touched}"
+          [ngClass]="{
+            'is-invalid': clientLastName.errors && clientLastName.touched
+          }"
           [(ngModel)]="client.lastName"
           minlength="2"
           required
-        >
+        />
         <div
           [hidden]="!clientLastName.errors?.required"
-          class="invalid-feedback">
-            Last Name required
+          class="invalid-feedback"
+        >
+          Last Name required
         </div>
         <div
           [hidden]="!clientLastName.errors?.minlength"
-          class="invalid-feedback">
-            Must be at least two characters
+          class="invalid-feedback"
+        >
+          Must be at least two characters
         </div>
       </div>
       <div class="form-group">
@@ -68,19 +74,17 @@
           class="form-control"
           name="email"
           #clientEmail="ngModel"
-          [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}"
+          [ngClass]="{
+            'is-invalid': clientEmail.errors && clientEmail.touched
+          }"
           [(ngModel)]="client.email"
           required
-        >
-        <div
-          [hidden]="!clientEmail.errors?.required"
-          class="invalid-feedback">
-            Email required
+        />
+        <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
+          Email required
         </div>
-        <div
-          [hidden]="!clientEmail.errors?.email"
-          class="invalid-feedback">
-            Invalid email
+        <div [hidden]="!clientEmail.errors?.email" class="invalid-feedback">
+          Invalid email
         </div>
       </div>
       <div class="form-group">
@@ -90,24 +94,22 @@
           class="form-control"
           name="phone"
           #clientPhone="ngModel"
-          [ngClass]="{'is-invalid':clientPhone.errors && clientPhone.touched}"
+          [ngClass]="{
+            'is-invalid': clientPhone.errors && clientPhone.touched
+          }"
           [(ngModel)]="client.phone"
           minlength="10"
           required
-        >
-        <div
-          [hidden]="!clientPhone.errors?.required"
-          class="invalid-feedback">
-            Phone required
+        />
+        <div [hidden]="!clientPhone.errors?.required" class="invalid-feedback">
+          Phone required
         </div>
-        <div
-          [hidden]="!clientPhone.errors?.minlength"
-          class="invalid-feedback">
-            Invalid phone number
+        <div [hidden]="!clientPhone.errors?.minlength" class="invalid-feedback">
+          Invalid phone number
         </div>
       </div>
       <div class="form-group">
-        <label for="balance">balance</label>
+        <label for="balance">Balance</label>
         <input
           type="number"
           class="form-control"
@@ -115,9 +117,19 @@
           [(ngModel)]="client.balance"
           #clientBalance="ngModel"
           [disabled]="disableBalanceOnAdd"
-        >
+        />
       </div>
-      <input type="submit" value="Submit" class="btn btn-primary btn-block">
+      <div class="form-group">
+        <label for="balance">Due Date</label>
+        <input
+          type="date"
+          class="form-control"
+          name="dueDate"
+          [(ngModel)]="client.dueDate"
+          #clientBalance="ngModel"
+        />
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary btn-block" />
     </form>
   </div>
 </div>
