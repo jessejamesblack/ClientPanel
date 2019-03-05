@@ -6,4 +6,5 @@ export interface Client {
   phone?: string;
   balance?: number;
   dueDate?: any;
+  totalOwed?: number;
 }

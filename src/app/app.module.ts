@@ -26,6 +26,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { ClientsViewComponent } from './components/clients-view/clients-view.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AppRoutingModule } from "./app-routing.module";
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ClientsViewComponent
   ],
   imports: [
     BrowserModule,

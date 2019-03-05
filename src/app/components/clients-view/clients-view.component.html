@@ -11,24 +11,12 @@
 <table *ngIf="clients?.length > 0; else noClients" class="table table-striped">
   <thead class="thead-inverse">
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Balance</th>
-      <th>Due Date</th>
-      <th></th>
+      <th>Total Owed By All Clients</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let client of clients">
-      <td>{{ client.firstName }} {{ client.lastName }}</td>
-      <td>{{ client.email }}</td>
-      <td>{{ client.balance | currency: "USD":"symbol" }}</td>
-      <td>{{ client.dueDate | date }}</td>
-      <td>
-        <a routerLink="client/{{ client.id }}" class="btn btn-secondary btn-sm"
-          ><i class="fa fa-arrow-circle-o-right">Details</i></a
-        >
-      </td>
+    <tr>
+      <td>{{ totalOwed | currency: "USD":"symbol" }}</td>
     </tr>
   </tbody>
 </table>

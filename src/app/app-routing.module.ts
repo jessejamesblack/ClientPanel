@@ -8,9 +8,11 @@ import { EditClientComponent } from "./components/edit-client/edit-client.compon
 import { ClientDetailsComponent } from "./components/client-details/client-details.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { ClientsViewComponent } from "./components/clients-view/clients-view.component";
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { fromEventPattern } from "rxjs";
 
 const routes: Routes = [
   { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
@@ -38,6 +40,11 @@ const routes: Routes = [
   {
     path: "settings",
     component: SettingsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "clients",
+    component: ClientsViewComponent,
     canActivate: [AuthGuard]
   },
   { path: "**", component: NotFoundComponent }
