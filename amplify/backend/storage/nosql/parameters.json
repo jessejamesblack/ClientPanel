@@ -1,0 +1,5 @@
+{
+    "tableName": "nosql",
+    "partitionKeyName": "nosql",
+    "partitionKeyType": "S"
+}

@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { FlashMessagesModule } from "angular2-flash-messages";
 import { FirestoreSettingsToken } from "@angular/fire/firestore";
 import { SettingsService } from "./services/settings.service";
+import { AmplifyAngularModule, AmplifyService } from "aws-amplify-angular";
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
@@ -49,12 +50,14 @@ import { AppRoutingModule } from "./app-routing.module";
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    AmplifyAngularModule
   ],
   providers: [
     ClientService,
     AuthService,
     SettingsService,
+    AmplifyService,
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]

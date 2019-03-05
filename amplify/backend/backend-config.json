@@ -1,0 +1,8 @@
+{
+	"storage": {
+		"nosql": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
