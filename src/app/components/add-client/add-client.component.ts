@@ -4,6 +4,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { Router } from "@angular/router";
 import { SettingsService } from "../../services/settings.service";
+import { AmplifyService } from "aws-amplify-angular";
 
 @Component({
   selector: "app-add-client",
@@ -25,8 +26,17 @@ export class AddClientComponent implements OnInit {
     private router: Router,
     private clientService: ClientService,
     private flashMessages: FlashMessagesService,
-    private settingsService: SettingsService
-  ) {}
+    private settingsService: SettingsService,
+    private amplifyService: AmplifyService
+  ) {
+    // now you can access category APIs:
+    console.log(this.amplifyService.auth()); // AWS Amplify Auth
+    console.log(this.amplifyService.analytics()); // AWS Amplify Analytics
+    console.log(this.amplifyService.storage()); // AWS Amplify Storage
+    console.log(this.amplifyService.api()); // AWS Amplify API
+    console.log(this.amplifyService.cache()); // AWS Amplify Cache
+    console.log(this.amplifyService.pubsub()); // AWS Amplify PubSub
+  }
 
   ngOnInit() {
     this.disableBalanceOnAdd = this.settingsService.getSettings().disableBalanceOnAdd;
