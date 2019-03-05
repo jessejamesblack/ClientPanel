@@ -29,19 +29,16 @@ export class ClientDetailsComponent implements OnInit {
     // Get the client
     this.clientService.getClient(this.id).subscribe(client => {
       if (client != null) {
-        console.log(client.dueDate.seconds);
         let dueDate = this.getDate(client.dueDate.seconds * 1000);
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
         let day = date.getDay() + 3;
-        let today = year + month + day;
-        console.log("due date" + new Date(dueDate));
-        console.log("today" + new Date(year + "-" + month + "-" + day));
+        let today = year + "-" + month + "-" + day;
         if (client.balance > 0) {
           this.hasBalance = true;
         }
-        if (new Date(year + "-" + month + "-" + day) > new Date(dueDate)) {
+        if (new Date(today) > new Date(dueDate)) {
           this.pastDue = true;
         }
       }

@@ -59,7 +59,11 @@
     </div>
     <hr />
     <ul class="list-group">
-      <li class="list-group-item">Contact Email: {{ client.email }}</li>
+      <li class="list-group-item">
+        Contact Email: {{ client.email }}
+        <br />
+        <a href="mailto: {{ client.email }}">Click to Send Email</a>
+      </li>
       <li class="list-group-item">Contact Phone: {{ client.phone }}</li>
     </ul>
   </div>
